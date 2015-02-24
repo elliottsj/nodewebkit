@@ -22,10 +22,10 @@ var urlBase = 'http://dl.node-webkit.org/v';
 // Determine download url
 switch (process.platform) {
   case 'win32':
-    url = urlBase + version + '/node-webkit-v' + version + '-win-' + process.arch +'.zip';
+    url = urlBase + version + '/node-webkit-v' + version + '-win-' + 'ia32' +'.zip';
     break;
   case 'darwin':
-    url = urlBase + version + '/node-webkit-v' + version + '-osx-' + process.arch + '.zip';
+    url = urlBase + version + '/node-webkit-v' + version + '-osx-' + (v.major < 10 ? 'ia32' : process.arch) + '.zip';
     break;
   case 'linux':
     url = urlBase + version + '/node-webkit-v' + version + '-linux-' + process.arch + '.tar.gz';
